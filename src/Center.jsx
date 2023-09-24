@@ -79,11 +79,13 @@ export default function Center(props) {
     }
   }
   function clearComplete() {
-    confirm(
+    var result = confirm(
       "Do you want to clear completed Tasks? This process is irreversable"
     );
-    let completeData = props.data.filter((elem) => !elem.completed);
-    props.setData(completeData);
+    if (result) {
+      let completeData = props.data.filter((elem) => !elem.completed);
+      props.setData(completeData);
+    }
   }
 
   return (

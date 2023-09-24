@@ -116,6 +116,7 @@ body {
   flex-direction: column;
 }
 .single-container {
+  cursor: move;
   border-bottom: 1px solid hsl(237, 14%, 26%);
   color: var(--font-color);
   display: flex;
@@ -238,6 +239,7 @@ body {
 .theame-switch:checked
   ~ .top-total-container
   > .center-content
+  > div
   > .single-container {
   border-bottom: 1px solid hsl(233, 11%, 84%);
   color: hsl(235, 19%, 35%);
@@ -245,6 +247,7 @@ body {
 .theame-switch:checked
   ~ .top-total-container
   > .center-content
+  > div
   > .single-container
   > .left-btn-container
   > .visual-checkbox {
