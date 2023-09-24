@@ -1,0 +1,268 @@
+html {
+  font-family: "Josefin Sans", sans-serif;
+  box-sizing: border-box;
+  font-size: 100%;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+* {
+  padding: 0px;
+  border: 0px;
+}
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+:root {
+  --dark-bg-color: hsl(235, 24%, 19%);
+  --font-color: hsl(234, 39%, 85%);
+  --completed-font-color: hsl(234, 11%, 52%);
+}
+.total-content {
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: hsl(235, 21%, 11%);
+}
+.background-container {
+  width: 100%;
+}
+.background-img-container {
+  width: 100%;
+  background-size: cover;
+  aspect-ratio: 375/200;
+  background-image: url("./assets/bg-mobile-dark.jpg");
+}
+.top-total-container {
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 30px 30px 30px;
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+}
+.title {
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+}
+.theame-switch {
+  z-index: 1;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  position: absolute;
+  aspect-ratio: 1/1;
+  height: 30px;
+  right: 34px;
+  top: 59px;
+}
+
+.theame-div {
+  pointer-events: none;
+  position: absolute;
+  right: 40px;
+  top: 65px;
+  height: 25px;
+  width: 25px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url("./assets/icon-sun.svg");
+}
+.title > h1 {
+  letter-spacing: 0.35em;
+  color: white;
+}
+.create-todo {
+  border-radius: 10px;
+  padding: 15px 20px;
+  background-color: var(--dark-bg-color);
+  display: flex;
+  flex-direction: row;
+}
+.create-todo > button {
+  position: absolute;
+  align-self: center;
+  right: 40px;
+  padding: 0.25em 0.5em;
+  border-radius: 1em;
+  cursor: pointer;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 700;
+}
+.create-textbox {
+  min-width: 50px;
+  outline: none;
+  padding: 0.25em;
+  font-size: 16px;
+  font-family: "Josefin Sans", sans-serif;
+  background-color: var(--dark-bg-color);
+  color: var(--font-color);
+}
+.center-content {
+  scrollbar-width: none;
+  overflow-y: scroll;
+  margin: 20px 0px;
+  border-radius: 10px;
+  background-color: var(--dark-bg-color);
+  padding: 15px 10px;
+  display: flex;
+  flex-direction: column;
+}
+.single-container {
+  border-bottom: 1px solid hsl(237, 14%, 26%);
+  color: var(--font-color);
+  display: flex;
+  flex-direction: row;
+}
+.single-container > button {
+  cursor: pointer;
+  margin-left: auto;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.single-container > button > svg {
+  pointer-events: none;
+}
+.left-btn-container > p {
+  margin-left: 35px;
+}
+.left-btn-container > input {
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  position: absolute;
+  align-self: center;
+  height: 20px;
+  aspect-ratio: 1/1;
+}
+.left-btn-container {
+  display: flex;
+  position: relative;
+}
+.visual-checkbox {
+  pointer-events: none;
+  align-self: center;
+  height: 25px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  border: 1px solid hsl(237, 14%, 26%);
+}
+.left-btn-container > input:checked ~ .visual-checkbox {
+  background-image: url("./assets/icon-check.svg"),
+    linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  background-size: 50%, 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.left-btn-container > input:checked ~ p {
+  color: var(--completed-font-color);
+  text-decoration: line-through;
+}
+.last-line {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  color: var(--font-color);
+}
+.lastline-center {
+  border-radius: 10px;
+  background-color: var(--dark-bg-color);
+  display: flex;
+  justify-content: center;
+  color: var(--font-color);
+  flex-direction: row;
+}
+.clear-complete {
+  cursor: pointer;
+}
+.bottom-common {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 1em;
+  margin-left: 1em;
+  flex-direction: column;
+  margin-top: -46px;
+}
+.bot-options {
+  pointer-events: none;
+}
+.bottom-common > input {
+  cursor: pointer;
+  appearance: none;
+  -moz-appearance: none;
+  display: block;
+  height: 40px;
+  aspect-ratio: 1/1;
+  position: relative;
+  top: 50px;
+}
+.bottom-common > input:checked ~ .bot-options {
+  color: hsl(220, 98%, 61%);
+}
+.hide {
+  display: none;
+}
+/* // Theame switch */
+.theame-switch:checked ~ .theame-div {
+  background-image: url("./assets/icon-moon.svg");
+}
+.theame-switch:checked ~ .background-container > .background-img-container {
+  background-image: url("./assets/bg-mobile-light.jpg");
+}
+.theame-switch:checked ~ .top-total-container > .create-todo {
+  background-color: hsl(236, 33%, 92%);
+}
+.theame-switch:checked ~ .top-total-container > .create-todo > input {
+  background-color: hsl(236, 33%, 92%);
+  color: hsl(235, 19%, 35%);
+}
+.theame-switch:checked ~ .top-total-container > .create-todo > button {
+  background-color: hsl(235, 24%, 19%);
+  color: hsl(0, 0%, 98%);
+}
+.theame-switch:checked ~ .top-total-container > .center-content {
+  background-color: hsl(236, 33%, 92%);
+}
+.theame-switch:checked
+  ~ .top-total-container
+  > .center-content
+  > .single-container {
+  border-bottom: 1px solid hsl(233, 11%, 84%);
+  color: hsl(235, 19%, 35%);
+}
+.theame-switch:checked
+  ~ .top-total-container
+  > .center-content
+  > .single-container
+  > .left-btn-container
+  > .visual-checkbox {
+  border: 1px solid hsl(236, 9%, 61%);
+}
+.theame-switch:checked ~ .top-total-container > .center-content > .last-line {
+  color: hsl(235, 19%, 35%);
+}
+.theame-switch:checked ~ .top-total-container > .lastline-center {
+  color: hsl(235, 19%, 35%);
+  background-color: hsl(236, 33%, 92%);
+}
+@media (min-width: 481px) {
+  .background-img-container {
+    aspect-ratio: 1440/300;
+    background-image: url("./assets/bg-desktop-dark.jpg");
+  }
+  .theame-switch:checked ~ .background-container > .background-img-container {
+    background-image: url("./assets/bg-desktop-light.jpg");
+  }
+}
